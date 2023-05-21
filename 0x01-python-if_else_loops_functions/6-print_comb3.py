@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-
-for digitOne in range(0, 10):
-    for digitTwo in range(digitOne + 1, 10):
-        if digitOne == 8 and digitTwo == 9:
-            print("{}{}".format(digitOne, digitTwo))
+for i in range(0, 10):
+    for j in range(0, 10):
+        if i >= j:
+            continue
+        elif i == 8 and j == 9:
+            print("{}{}".format(i, j))
         else:
-            print("{}{}".format(digitOne, digitTwo), end=", ")
+            print("{}{}, ".format(i, j), end='')
