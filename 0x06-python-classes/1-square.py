@@ -1,17 +1,9 @@
 #!/usr/bin/python3
-# 1-square.py
-"""Write a class Square that defines a square by: (based on 0-square.py)
-
--Private instance attribute: size
--Instantiation with size (no type/value verification)
--You are not allowed to import any module
-"""
-
+"""Define a class Square."""
 
 
 class Square:
-
-    """__init__ method used to initialize variables"""
+    """Represent a square."""
 
     def __init__(self, size):
         """Initialize a new Square.
