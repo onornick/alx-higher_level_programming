@@ -7,6 +7,8 @@
 -You are not allowed to import any module
 """
 
+
+
 class Square:
 
     """__init__ method used to initialize variables"""
