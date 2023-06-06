@@ -64,7 +64,8 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        s = "\n".join([f"{self.print_symbol}" * self.__width for rows in range(self.__height)])
+        s = "\n".join([f"{self.print_symbol}" * self.__width
+                       for rows in range(self.__height)])
         return s
 
     def __repr__(self):
@@ -72,6 +73,6 @@ class Rectangle:
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
     def __del__(self):
-        Rectangle.number_of_instances = Rectangle.number_of_instances - 1
+        Rectangle.number_of_instances =
+        Rectangle.number_of_instances - 1
         print("Bye rectangle...")
-
