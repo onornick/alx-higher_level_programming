@@ -1,0 +1,74 @@
+# run test with python3 -m doctest -v ./tests/[filename].txt
+
+import method to test
+>>> MyList = __import__('1-my_list').MyList
+
+SUCCESS CASES:
+
+Test int: Assumes all are int
+     >>> my_list = MyList()
+     >>> my_list.append(9)
+     >>> my_list.append(5)
+     >>> my_list.append(-11)
+     >>> print(my_list)
+     [9, 5, -11]
+     >>> my_list.print_sorted()
+     [-11, 5, 50]
+     >>> print(my_list)
+     [9, 5, -11]
+
+     >>> test_list = MyList()
+     >>> test_list.append(300)
+     >>> test_list.append(50)
+     >>> test_list.append(-1)
+     >>> print(test_list)
+     [300, 50, -1]
+     >>> test_list.print_sorted()
+     [-1, 50, 300]
+     >>> print(test_list)
+     [300, 50, -1]
+
+     >>> new = MyList()
+     >>> new.append(-300)
+     >>> new.append(50)
+     >>> new.append(-1)
+     >>> print(new)
+     [-300, 50, -1]
+     >>> id(new) is not id(new.print_sorted())
+     [-300, -1, 50]
+     True
+
+Test list with only one element:
+     >>> only_1 = MyList()
+     >>> only_1.append(-99999)
+     >>> print(only_1)
+     [-99999]
+     >>> only_1.print_sorted()
+     [-99999]
+     >>> print(only_1)
+     [-99999]
+
+Test list with no elements:
+     >>> empty = MyList()
+     >>> print(empty)
+     []
+     >>> empty.print_sorted()
+     []
+
+Test type, isinstance, issubclass:
+     >>> type(MyList())
+     <class '1-my_list.MyList'>
+
+     >>> isinstance(MyList, object)
+     True
+
+     >>> isinstance(MyList, list)
+     False
+
+     >>> issubclass(MyList, list)
+     True
+
+     >>> 'print_sorted' in dir(MyList)
+     True
+
+FAIL CASES:
