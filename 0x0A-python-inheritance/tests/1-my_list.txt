@@ -13,7 +13,7 @@ Test int: Assumes all are int
      >>> print(my_list)
      [9, 5, -11]
      >>> my_list.print_sorted()
-     [-11, 5, 50]
+     [-11, 5, 9]
      >>> print(my_list)
      [9, 5, -11]
 
