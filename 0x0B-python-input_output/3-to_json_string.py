@@ -1,17 +1,18 @@
 #!/usr/bin/python3
+""" Module that contains a function that returns the JSON
+representation of an object
+"""
 import json
-"""
-Module 3-to_json_string
-Contains function that returns JSON representation of obj (string)
-"""
 
 
 def to_json_string(my_obj):
-    """returns json string representation
+    """ Function that returns the JSON representation of an object
 
     Args:
         my_obj: object
 
     Raises:
-        Exception: when encoding can't take place"""
+        Exception: when the object can't be encoded
+
+    """
     return json.dumps(my_obj)
