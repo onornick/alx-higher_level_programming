@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import json
 """this module has one function\
         that returns an object from a json string"""
+import json
 
 
 def from_json_string(my_str)i:
