@@ -3,7 +3,7 @@
 import json
 
 
-def save_to_json_file(filename):
+def load_from_json_file(filename):
     """
     a function that creates an object from
     a json file
