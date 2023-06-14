@@ -27,7 +27,7 @@ class Student:
         value = {}
         if attrs is None:
             return self.__dict__
-        for k in attrs:
-            if k in self.__dict__.keys():
+        for k, v in self.__dict__.items():
+            if k in attrs:
                 value[k] = self.__dict__[k]
         return value
