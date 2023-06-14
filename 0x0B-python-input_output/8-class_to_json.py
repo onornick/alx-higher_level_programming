@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that returns the dictionary description"""
 
+
 def class_to_json(obj):
     """ Function that retuns the dictionary description of an obj """
 
