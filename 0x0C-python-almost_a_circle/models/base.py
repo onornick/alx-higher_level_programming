@@ -80,6 +80,6 @@ class Base:
                 instances = cls.from_json_string(f.read())
             for i, dic in enumerate(instances):
                 mylist.append(cls.create(**instances[i]))
-        except:
-            pass
+        except JSONDecodeError:
+            print("Error parsing JSON data.")
         return mylist
