@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import csv
 """
 This module defines the base class
 that all other classes inherit from
