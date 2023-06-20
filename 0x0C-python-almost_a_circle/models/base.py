@@ -25,7 +25,7 @@ class Base:
             id: int - rep the id of instance
         """
         if id is not None:
-            self.id = Base.__nb_objects
+            self.id = id
 
         else:
             Base.__nb_objects += 1
