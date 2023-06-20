@@ -33,7 +33,7 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
-        self.height = weight
+        self.height = height
         self.x = x
         self.y = y
         super().__init__(id)
@@ -46,7 +46,7 @@ class Rectangle(Base):
     def width(self, value):
         if type(value) is not int:
             raise TypeError(f"width must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
@@ -58,7 +58,7 @@ class Rectangle(Base):
     def height(self, value):
         if type(value) is not int:
             raise TypeError(f"height must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
@@ -71,7 +71,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError(f"x must be an integer")
         if value < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -83,7 +83,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError(f"y must be an integer")
         if value < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
         self.__y = value
 
     def area(self):
@@ -96,8 +96,10 @@ class Rectangle(Base):
                         for _ in range(self.height)))
 
     def __str__(self):
-        return f"{__class__.name} ({self.id}) {self.x}/{self.y}\
-                {self.width}/{self.height}"
+        """Prints [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """
@@ -122,7 +124,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Return dictionary representation"""
-        keys_to_include = ['id', 'width', 'height', 'x', 'y']
-        return {key: value for key, value in
-                super().__dict__.items()
-                if key in keys_to_include}
+        d = {}
+        d["id"] = self.id
+        d["width"] = self.width
+        d["height"] = self.height
+        d["x"] = self.x
+        d["y"] = self.y
+        return d

@@ -45,13 +45,14 @@ class Base:
         Args:
             list_objs: list - list of instances
         """
-        if list_objs is None:
-            list_objs = []
-        json_string = cls.to_json_string(
-                [obj.to_dictionary() for obj in list_objs])
+        """Save json strings of all instances into file"""
+        objs = []
+        if list_objs is not None:
+            for o in list_objs:
+                objs.append(cls.to_dictionary(o))
         filename = cls.__name__ + ".json"
-        with open(filename, 'w', encoding="utf-8") as file:
-            file.write(json_string)
+        with open(filename, "w") as f:
+            f.write(cls.to_json_string(objs))
 
     @staticmethod
     def from_json_string(json_string):

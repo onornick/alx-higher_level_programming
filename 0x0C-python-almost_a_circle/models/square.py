@@ -39,7 +39,7 @@ class Square(Rectangle):
         to_dictionary(self)
     """
     def __init__(self, size, x=0, y=0, id=None):
-        super.__init__(width, height, x, y, id)
+        super().__init__(size, size, x, y, id)
         self.size = size
 
     @property
@@ -53,7 +53,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """Prints [Square] (<id>) <x>/<y> - <size>"""
-        return "[{:s}] ({:d}) {:d}/{:d} - {:d}".format(
+        return "{:s} ({:d}) {:d}/{:d} - {:d}".format(
             self.__class__.__name__, self.id, self.x, self.y,
             self.size)
 
@@ -63,13 +63,13 @@ class Square(Rectangle):
         If no args given: set attributes according to kwargs
         """
         if args:
-            if args >= 1:
+            if len(args) >= 1:
                 self.id = args[0]
-            if args >= 2:
+            if len(args) >= 2:
                 self.size = args[1]
-            if args >= 3:
+            if len(args) >= 3:
                 self.x = args[2]
-            if args >= 4:
+            if len(args) >= 4:
                 self.y = args[3]
 
         if kwargs:
@@ -77,7 +77,10 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        keys_to_include = ['id', 'size', 'x', 'y']
-        return {key: value for key, value in
-                super().__dict__.items()
-                if key in keys_to_include}
+        """Return dictionary representation"""
+        d = {}
+        d["id"] = self.id
+        d["size"] = self.size
+        d["x"] = self.x
+        d["y"] = self.y
+        return d
