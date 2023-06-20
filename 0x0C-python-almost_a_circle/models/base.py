@@ -45,8 +45,8 @@ class Base:
         Args:
             list_objs: list - list of instances
         """
-            for o in list_objs:
-                objs.append(cls.to_dictionary(o))
+        for o in list_objs:
+            objs.append(cls.to_dictionary(o))
         filename = cls.__name__ + ".json"
         with open(filename, "w") as f:
             f.write(cls.to_json_string(objs))
