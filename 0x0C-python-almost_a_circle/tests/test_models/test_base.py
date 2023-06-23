@@ -35,8 +35,8 @@ class TestBase(unittest.TestCase):
     def tearDown(self):
         try:
             os.remove("Rectangle.json")
-        except:
-            pass
+        except OSError:
+            print("Os error")
 
     """Test attributes"""
     def test_id_given(self):
