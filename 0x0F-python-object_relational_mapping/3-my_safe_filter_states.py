@@ -14,6 +14,7 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
+    """checks if the file is being currently executed"""
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
     curs.execute("""SELECT * FROM states
