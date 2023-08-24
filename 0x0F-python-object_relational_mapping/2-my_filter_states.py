@@ -12,6 +12,3 @@ if __name__ == "__main__":
                       ORDER BY states.id ASC""".format(state_name))
 
     [print(state) for state in db_cursor.fetchall()]
-
-    db_cursor.close()
-    db.close()
