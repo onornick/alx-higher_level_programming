@@ -14,7 +14,12 @@ if __name__ == "__main__":
     curs = db.cursor()
 
     curs.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
-    [print((state) for state in curs.fetchall()]
+    states = curs.fetchall()
 
-    curr.close()
+
+    for state in states:
+        formated_state = "({}, '{}')".format(state[0], state[1])
+        print(formated_state)
+    
+    curs.close()
     db.close()
