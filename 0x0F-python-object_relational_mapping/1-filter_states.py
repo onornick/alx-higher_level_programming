@@ -16,10 +16,8 @@ if __name__ == "__main__":
     curs.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
     states = curs.fetchall()
 
-
     for state in states:
         formated_state = "({}, '{}')".format(state[0], state[1])
         print(formated_state)
-    
     curs.close()
     db.close()
