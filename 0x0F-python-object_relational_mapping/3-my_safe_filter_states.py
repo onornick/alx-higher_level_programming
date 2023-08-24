@@ -17,8 +17,9 @@ if __name__ == '__main__':
     """checks if the file is being currently executed"""
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
-    curs.execute("""SELECT * FROM states
+    curs.execute("""SELECT id, name FROM states
                  WHERE name LIKE BINARY '{}'
                  ORDER BY states.id ASC""".format(sys.argv[4]).strip("'"))
-
-    [print(state) for state in curs.fetchall()]
+    rows = curs.fetchall()
+    for row in rows:
+        print(row)
