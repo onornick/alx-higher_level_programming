@@ -12,6 +12,3 @@ exports.esrever = function (list) {
   }
   return reversedList;
 };
-
-console.log(exports.esrever([1, 2, 3, 4, 5]));
-console.log(exports.esrever(['School', 89, { id: 12 }, 'String']));
