@@ -5,7 +5,9 @@
  * Create an instance method called charPrint(c) that prints the rectangle using the character c
  * If c is undefined, use the character X
  */
-class Square extends require('./5-square') {
+const Parent = require('./5-square')
+
+class Square extends Parent {
   charPrint (char = 'X') {
     for (let i = 0; i < this.height; i++) {
       let row = '';
@@ -16,3 +18,5 @@ class Square extends require('./5-square') {
     }
   }
 }
+
+module.exports = Square;
