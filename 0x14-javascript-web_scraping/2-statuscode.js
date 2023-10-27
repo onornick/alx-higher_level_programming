@@ -9,9 +9,5 @@ if (process.argv.length < 3) {
 
 const url = process.argv[2];
 request(url, function (err, response) {
-  if (err) {
-    console.log('Error: ', err);
-  }
-
-  console.log('code: ', response.statusCode);
+  console.log('code:', response.statusCode);
 });
