@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 // Select the <header> element using document.querySelector
 const headerElement = document.querySelector('header');
 
